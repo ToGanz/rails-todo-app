@@ -37,11 +37,14 @@ group :development, :test do
 
   # Capybara, the library that allows us to interact with the browser using Ruby
   gem 'capybara'
-  
+
   # The following two gems aid with the nuts and bolts
   # of interacting with the browser.
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+
+  gem 'factory_bot_rails'
+  gem 'faker', '~> 1.9.1'
 end
 
 group :development do
