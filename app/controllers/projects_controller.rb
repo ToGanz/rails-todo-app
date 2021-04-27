@@ -5,11 +5,14 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    @projects = Project.all
     @project = Project.new(project_params)
     if @project.save
       flash[:notice] = "Project was successfully created."
+      redirect_to projects_path
+    else
+      render :index
     end
-    redirect_to projects_path
   end
 
   private
