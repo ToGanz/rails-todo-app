@@ -141,9 +141,49 @@ body {
 
 
 .project-section {
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-bottom: 4px solid $green;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  grid-gap: 20px;
+  ul {
+    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  li {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+  .errors {
+    font-weight: normal;
+    font-size: 12px;
+    padding: 5px;
+    margin: 5px;
+    .error-number {
+      padding: 5px;
+      margin: 5px;
+    }
+    li {
+      font-weight: normal;
+      font-size: 12px;
+      text-transform: none;
+      list-style-type: square;
+      box-shadow: none;
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+  }
 }
 
 /* The Close Button */
@@ -185,3 +225,4 @@ h1 span {
 li h1 {
   border-bottom: 4px solid $light_green;
 }
+
