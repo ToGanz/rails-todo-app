@@ -1,0 +1,8 @@
+<%= form_with(model: @project, local: true, :html => {class: "formInput project-form"} ) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, id: 'project-title' %>
+
+  <%= f.submit "Create Project", class: "btn addProject" %>
+<% end %>

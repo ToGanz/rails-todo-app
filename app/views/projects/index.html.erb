@@ -1,0 +1,9 @@
+<section class="project-section">
+  <%= render 'projects/form' %>
+
+  <% if @projects.any? %>
+    <ul class="list" id="projects-list">
+      <%= render @projects %>
+    </ul>
+  <% end %>
+</section>
