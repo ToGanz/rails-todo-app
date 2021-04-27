@@ -187,14 +187,14 @@ body {
 }
 
 /* The Close Button */
-#close-project {
+.close-project {
   color: $light_green;
   float: right;
   padding-left: 10px;
   font-size: 28px;
   font-weight: bold;
 }
-#close-project:hover {
+.close-project:hover {
   color: $green;
 }
 
