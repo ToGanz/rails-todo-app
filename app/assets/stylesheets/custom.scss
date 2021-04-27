@@ -1,0 +1,187 @@
+@import "color-scheme";
+// @import "mobile_menu";
+@import "button";
+// @import "modal";
+// @import "input";
+
+html {
+  /* border-box box model allows us to add padding and border to our elements without increasing their size */
+  box-sizing: border-box;
+  /* A system font stack so things load nice and quick! */
+  font-family: Source Sans Pro, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.05rem;
+  color: var($black);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+  @include button;
+}
+
+/*
+  WAT IS THIS?!
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 15px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+// Grid it
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  grid-gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+#tasks-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  grid-gap: 10px;
+  font-weight: 400;
+  ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-items: start;
+    grid-gap: 10px;
+  }
+
+  
+
+  .task {
+    text-align: start;
+    padding: 10px 10px 0 10px;
+    display: grid;
+    grid-template-columns: minmax(150px, 400px) 100px;
+    grid-gap: 10px;
+    margin-top: 5px;
+    color: $gray;
+  
+    .inner-task {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+      grid-template-rows: auto auto auto;
+      grid-gap: 10px;
+      color: $gray;
+
+      h1 {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        font-size: 20px;
+        font-weight: bold;
+        color: $black;
+        padding-left: 20px;
+      }
+  
+      h3 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        font-size: 12px;
+        padding: 5px 20px;
+      }
+  
+      h4 {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        font-size: 12px;
+        padding: 5px 20px;
+      }
+  
+      p {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+        font-size: 14px;
+        padding: 5px 20px;
+      }
+    }
+  
+    .checks {
+      grid-column: 2 / 3;
+      grid-row: 4 / 5;
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-items: end;
+      padding: 5px;
+      label {
+        display: inline-block;
+        font-size: 12px;
+        width: 70px;
+        margin-right: 7px;
+        white-space: nowrap;
+        vertical-align: middle;
+      }
+      .check {
+        vertical-align: middle;
+        margin: 0px;
+      }
+    }
+  }
+  .finished {
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  }
+}
+
+
+
+.project-section {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 4px solid $green;
+}
+
+/* The Close Button */
+#close-project {
+  color: $light_green;
+  float: right;
+  padding-left: 10px;
+  font-size: 28px;
+  font-weight: bold;
+}
+#close-project:hover {
+  color: $green;
+}
+
+header {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+li {
+  list-style: none;
+  border: 1px solid rgba(237, 242, 247, 1);
+  border-radius: 0.25rem;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  transition: 0.15s;
+}
+
+li:hover,
+button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+h1 span {
+  border-bottom: 4px solid $green;
+}
+
+li h1 {
+  border-bottom: 4px solid $light_green;
+}
