@@ -5,13 +5,13 @@ RSpec.describe 'Creating a project', type: :feature do
     visit projects_path
     fill_in 'Title', with: 'Todos for Today'
     click_on 'Create Project'
-    expect(page).to have_content('Project was successfully crrated.')
+    expect(page).to have_content('Project was successfully created.')
   end
 
   scenario 'invalid inputs' do
     visit projects_path
     fill_in 'Title', with: ''
     click_on 'Create Project'
-    expect(page).to have_content("Name can't be blank")
+    expect(page).to have_content("Title can't be blank")
   end
 end
