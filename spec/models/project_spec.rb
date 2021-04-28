@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Project, type: :model do
-  subject { Project.create(title: "June") }
+  subject { Project.create(title: "June")}
 
   context 'all required fields are present' do
     it 'is valid' do

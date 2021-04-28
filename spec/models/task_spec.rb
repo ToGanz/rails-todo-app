@@ -1,16 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Task, type: :model do
-  let(:project) { Project.create(title: "Week 27") }
-  subject do 
-    Task.create(
-      title: "Buy Groceries", 
-      project: project, 
-      due_date: "27.05.2021",
-      priority:  5,
-      description: "Get bananas and apples"
-    )
-  end
+  subject { FactoryBot.create(:task) }
 
   context 'all required fields are present' do
     it 'is valid' do
