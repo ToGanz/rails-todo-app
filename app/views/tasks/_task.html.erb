@@ -1,0 +1,15 @@
+<li class="task">
+  <div class=<%= task.completed ? "inner-task finished" : "inner-task unfinished" %>>
+    <h1><%= task.title %></h1>
+    <h3>Priority: <%=  task.priority %></h3>
+    <h4>Due: <%=  task.due_date %></h4>
+    <p><%=  task.description %></p>
+  </div>
+  <button class="editTaskPopup btn icon">Edit Task</button>
+  <div class="checks">
+    <label class="checkbox-label" for="check">
+      <%= task.completed ? "completed!" : "completed?" %>
+    </label>
+    <input class="check" name="chckbox" type="checkbox" />
+  </div>
+</li>

@@ -1,0 +1,18 @@
+<%= form_with(model: @task, local: true, :html => {class: "formInput task-form"} ) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'task-title' %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, class: 'task-description' %>
+
+  <%= f.label :due_date %>
+  <%= f.date_field :due_date, class: 'task-due-date' %>
+
+  <%= f.label :priority %>
+  <%= f.number_field :priority, in: 1..5, step: 1, class: 'task-priority' %>
+
+  <%= f.hidden_field :project_id, value: @project.id %>
+
+  <%= f.submit "Add Task", class: "btn add-task" %>
+  <%= render 'shared/error_messages', object: f.object %>
+<% end %>

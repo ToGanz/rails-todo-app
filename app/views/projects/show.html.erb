@@ -1,0 +1,12 @@
+<section class="project-section">
+  <ul class="list" id="projects-list">
+    <%= render @project %>
+  </ul>
+</section>
+
+<section id="tasks-section">
+  <%= render 'tasks/form' %>
+  <ul class="list" id="tasks-list">
+    <%= render @tasks %>
+  </ul>
+</section>

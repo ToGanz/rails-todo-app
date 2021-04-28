@@ -1,7 +1,7 @@
 <li class="project" id="project-<%= project.id %>">
-  <h1 class="project-title"><%= project.title %></h1>
-  <span class="close-project">
-    <%= link_to "x", project, method: :delete,
+  <%= link_to project do %>
+    <h1 class="project-title"><%= project.title %></h1>
+  <% end %>
+  <%= link_to "x", project, method: :delete, class: "close-project",
                             data: { confirm: "You sure?" } %>
-  </span>
 </li>

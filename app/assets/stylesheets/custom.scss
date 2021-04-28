@@ -168,25 +168,36 @@ body {
     text-transform: uppercase;
     font-size: 20px;
   }
-  .errors {
+}
+
+.errors {
+  width: 143px;
+  font-weight: normal;
+  font-size: 12px;
+  padding: 5px;
+  margin: 5px;
+
+  ul {
+    margin:  0;
+    padding: 0;
+    padding-inline-start: 0;
+    margin-block-end: 0;
+    margin-block-start: 0;
+  }
+  li {
+    width: 143px;
     font-weight: normal;
     font-size: 12px;
-    padding: 5px;
-    margin: 5px;
-    .error-number {
-      padding: 5px;
-      margin: 5px;
-    }
-    li {
-      font-weight: normal;
-      font-size: 12px;
-      text-transform: none;
-      list-style-type: square;
-      box-shadow: none;
-      padding: 0;
-      margin: 0;
-      border: none;
-    }
+    text-transform: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    transition: none;
+  }
+  li:hover {
+    transform: none;
+    box-shadow: none;
   }
 }
 
@@ -230,3 +241,14 @@ li h1 {
   border-bottom: 4px solid $light_green;
 }
 
+.formInput {
+  padding-left: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+  font-size: 14px;
+  height: 100%;
+}
+textarea {
+  resize: none;
+}
