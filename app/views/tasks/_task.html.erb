@@ -10,10 +10,18 @@
       <button class="edit-task btn icon">Edit Task</button>
     <% end %>
     <div class="checks">
-      <label class="checkbox-label" for="check">
+      <%= link_to task.completed ? "completed!" : "completed?",
+          complete_project_task_path(@project, task), method: :patch,
+          class: "btn"
+      %>
+      <%
+=begin%>
+ <label class="checkbox-label" for="check">
         <%= task.completed ? "completed!" : "completed?" %>
       </label>
-      <input class="check" name="chckbox" type="checkbox" />
+      <input class="check" name="chckbox" type="checkbox" /> 
+<%
+=end%>
     </div>
   </li>
 <% end %>

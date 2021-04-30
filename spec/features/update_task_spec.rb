@@ -18,4 +18,20 @@ RSpec.describe 'Update task', type: :feature do
 
     expect(page).to have_content('Locations')
   end
+
+  scenario 'mark as complete' do
+    project = FactoryBot.create(:project)
+    task = FactoryBot.create(:task, project: project) 
+
+    visit project_path(project)
+    within find("#task-#{task.id}") do
+      click_on 'completed?'
+    end
+
+    expect(task.reload.completed).to be true
+    within find("#task-#{task.id}") do
+      click_on 'completed!'
+    end
+    expect(task.reload.completed).to be false
+  end
 end

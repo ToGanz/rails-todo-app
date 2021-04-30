@@ -8,4 +8,5 @@ class Task < ApplicationRecord
       self.due_date.strftime("%d.%m.%Y")
     end
   end
+  
 end

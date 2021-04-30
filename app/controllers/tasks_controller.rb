@@ -31,6 +31,11 @@ class TasksController < ApplicationController
     redirect_to @project
   end
 
+  def complete
+    @task.update(completed: !@task.completed)
+    redirect_to @project
+  end
+
   private
 
   def set_project
