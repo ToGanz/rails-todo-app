@@ -9,7 +9,9 @@ RSpec.describe 'Creating a task', type: :feature do
     fill_in 'Due date', with: Date.today
     fill_in 'Priority', with: 4
     fill_in 'Description', with: 'Buy Bananas'
+    puts 1
     click_on 'Add Task'
+    puts 2
     expect(page).to have_content('Task was successfully created.')
     expect(page).to have_content('Groceries')
   end

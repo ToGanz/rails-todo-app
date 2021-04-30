@@ -1,6 +1,6 @@
 <% provide(:title, 'Edit Task') %>
 <% provide(:button_text, 'Update Task') %>
-<% provide(:path,  task_path ) %>
+<% provide(:path,  project_task_path(@project, @task) ) %>
 
 <%= render 'tasks/form' %>
 

@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
+  before_action :set_project
 
   def create
-    @project = Project.find(task_params[:project_id])
-    @task = Task.new(task_params)
+    @task = @project.tasks.build(task_params)
     if @task.save
       flash[:notice] = "Task was successfully created."
       redirect_to @project
@@ -14,11 +14,9 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
-    @project = Project.find(@task.project_id)
   end
 
   def update
-    @project = Project.find(task_params[:project_id])
     @task = Task.find(params[:id])
     if @task.update(task_params)
       flash[:notice] = "Task was successfully updated."
@@ -30,7 +28,11 @@ class TasksController < ApplicationController
 
   private
 
+  def set_project
+    @project = Project.find(params[:project_id])
+  end
+
   def task_params
-    params.require(:task).permit(:title, :description, :due_date, :priority, :project_id)
+    params.require(:task).permit(:title, :description, :due_date, :priority)
   end
 end
