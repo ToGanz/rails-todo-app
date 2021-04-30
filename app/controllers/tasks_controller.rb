@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_project
+  before_action :set_task, except: [:create]
 
   def create
     @task = @project.tasks.build(task_params)
@@ -13,11 +14,9 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
   end
 
   def update
-    @task = Task.find(params[:id])
     if @task.update(task_params)
       flash[:notice] = "Task was successfully updated."
       redirect_to @project
@@ -26,10 +25,20 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    @task.destroy
+    flash[:success] = "Task deleted"
+    redirect_to @project
+  end
+
   private
 
   def set_project
     @project = Project.find(params[:project_id])
+  end
+
+  def set_task
+    @task = @project.tasks.find(params[:id])
   end
 
   def task_params

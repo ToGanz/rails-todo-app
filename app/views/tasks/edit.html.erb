@@ -4,3 +4,5 @@
 
 <%= render 'tasks/form' %>
 
+<%= link_to 'Delete Task', project_task_path(@project, @task), method: :delete,
+ data: { confirm: "Are you sure?" }, class: "delete-task-link btn"%>
