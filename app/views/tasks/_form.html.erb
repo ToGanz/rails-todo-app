@@ -1,4 +1,4 @@
-<%= form_with(model: @task, local: true, :html => {class: "formInput task-form"} ) do |f| %>
+<%= form_with(model: @task, url: yield(:path), local: true, :html => {class: "formInput task-form"} ) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, class: 'task-title' %>
 
@@ -13,6 +13,6 @@
 
   <%= f.hidden_field :project_id, value: @project.id %>
 
-  <%= f.submit "Add Task", class: "btn add-task" %>
+  <%= f.submit yield(:button_text), class: "btn add-task" %>
   <%= render 'shared/error_messages', object: f.object %>
 <% end %>

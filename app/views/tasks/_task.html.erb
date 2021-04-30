@@ -1,11 +1,13 @@
-<li class="task">
+<li class="task" id="task-<%= task.id %>">
   <div class=<%= task.completed ? "inner-task finished" : "inner-task unfinished" %>>
     <h1><%= task.title %></h1>
     <h3>Priority: <%=  task.priority %></h3>
     <h4>Due: <%= task.formatted_date %></h4>
     <p><%=  task.description %></p>
   </div>
-  <button class="edit-task btn icon">Edit Task</button>
+  <%= link_to edit_task_path(task), class: "edit-task-link" do %>
+    <button class="edit-task btn icon">Edit Task</button>
+  <% end %>
   <div class="checks">
     <label class="checkbox-label" for="check">
       <%= task.completed ? "completed!" : "completed?" %>

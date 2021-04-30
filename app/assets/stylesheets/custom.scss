@@ -76,7 +76,10 @@ body {
     grid-gap: 10px;
     margin-top: 5px;
     color: $gray;
-  
+    .edit-task-link {
+      margin-top: 5px;
+      height: 32px;
+    }
     .inner-task {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
