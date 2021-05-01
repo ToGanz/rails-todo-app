@@ -125,6 +125,11 @@ body {
       grid-template-columns: auto auto;
       justify-items: end;
       padding: 5px;
+      .btn {
+        width: 100px;
+        padding: 6px;
+        padding-left: 9px;
+      }
       label {
         display: inline-block;
         font-size: 12px;

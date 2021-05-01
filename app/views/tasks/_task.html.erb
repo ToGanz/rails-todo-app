@@ -1,6 +1,6 @@
 <% if task.id %>
-  <li class="task" id="task-<%= task.id %>">
-    <div class=<%= task.completed ? "inner-task finished" : "inner-task unfinished" %>>
+  <li class="task <%= task.completed ? "finished" : "unfinished" %>" id="task-<%= task.id %>">
+    <div class="inner-task">
       <h1><%= task.title %></h1>
       <h3>Priority: <%=  task.priority %></h3>
       <h4>Due: <%= task.formatted_date %></h4>

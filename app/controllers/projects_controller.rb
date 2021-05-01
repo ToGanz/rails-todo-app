@@ -6,7 +6,8 @@ class ProjectsController < ApplicationController
 
   def show 
     @project = Project.find(params[:id])
-    @tasks = @project.tasks
+    @finished_tasks = @project.tasks.select(&:completed)
+    @unfinished_tasks = @project.tasks.select { |task| !task.completed }
     @task = Task.new
   end
 

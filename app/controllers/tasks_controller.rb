@@ -8,7 +8,8 @@ class TasksController < ApplicationController
       flash[:notice] = "Task was successfully created."
       redirect_to @project
     else
-      @tasks = @project.tasks
+      @finished_tasks = @project.tasks.select(&:completed)
+      @unfinished_tasks = @project.tasks.select { |task| !task.completed }
       render "projects/show"
     end
   end

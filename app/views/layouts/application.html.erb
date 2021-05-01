@@ -13,7 +13,9 @@
   <body>
     <div id="app">
       <header>
-        <h1><span>Just do it</span></h1>
+        <h1><%= link_to root_path do %>
+          <span>Just do it</span>
+        <% end %></h1>
       </header>
 
       <% flash.each do |message_type, message| %>
