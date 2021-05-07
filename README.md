@@ -8,7 +8,8 @@ ToDo App in Ruby on Rails.
 
 This is the third app in a series of apps I'm building. It will always be the same app but build in different technologies.
 
-Live Site: [https://tg-rails-todo-app.herokuapp.com/projects]
+Live Site: [https://tg-rails-todo-app.herokuapp.com]
+(free plan so first load might take a few seconds)
 
 You can create and delete projects and tasks within these projects. Tasks can be edited, deleted and set to "complete".
 The projects and tasks get saved to postgresql.
